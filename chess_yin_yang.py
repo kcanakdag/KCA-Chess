@@ -1,7 +1,6 @@
 import pygame
 from math import floor
 import time
-import pprint
 from copy import copy
 import tensorflow as tf
 from collections import deque
@@ -2082,7 +2081,7 @@ def StartGame():
                 states_list = list(states)
                 state_key_move_selected = states_list[index]
                 state = states[state_key_move_selected]
-                print(value_list)
+                # print(value_list)
 
             elif whos_turn == 'B':
                 value_list, preferredState, index = yang.evaulate(list_of_states, whos_turn)
@@ -2137,8 +2136,8 @@ total_games = 0
 yin.epsilon = 0.2
 yang.epsilon =0.2
 
-yin.model.load_weights('model_yin_1501.h5')
-yang.model.load_weights('model_yang_1501.h5')
+yin.model.load_weights(r'saved/model_yin_1501.h5')
+yang.model.load_weights(r'saved/model_yang_1501.h5')
 
 NUM_OF_GAMES_PLAYED = 1000000
 for i in range(NUM_OF_GAMES_PLAYED):
@@ -2147,7 +2146,7 @@ for i in range(NUM_OF_GAMES_PLAYED):
     print('episode: {}/{}, e:{:.2}, moves : {}, W_win %{} , B_win %{}'.format(i+1, NUM_OF_GAMES_PLAYED, yin.epsilon, moves,
                                                                               (W_win/(total_games))*100, (B_win/(total_games))*100))
     if i%100 == 0:
-        yin.model.save_weights('model_yin_{}.h5'.format(total_games))
-        yang.model.save_weights('model_yang_{}.h5'.format(total_games))
+        yin.model.save_weights(r'saved/model_yin_{}.h5'.format(total_games))
+        yang.model.save_weights(r'saved/model_yang_{}.h5'.format(total_games))
 
 
