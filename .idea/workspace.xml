@@ -2,91 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="237bbfff-b6aa-4c45-a40c-aea7348aa750" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/chess_yin_yang.py" beforeDir="false" afterPath="$PROJECT_DIR$/chess_yin_yang.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_1.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_1001.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_101.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_1101.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_1201.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_1301.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_1401.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_1501.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_1601.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_1701.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_1801.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_1901.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_2001.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_201.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_2101.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_2201.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_2301.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_2401.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_2501.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_2601.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_2701.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_2801.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_2901.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_3001.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_301.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_3101.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_3201.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_3301.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_3401.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_3501.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_3601.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_3701.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_3801.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_3901.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_4001.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_401.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_4101.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_501.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_601.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_701.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_801.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yang_901.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_1.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_1001.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_101.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_1101.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_1201.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_1301.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_1401.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_1501.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_1601.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_1701.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_1801.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_1901.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_2001.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_201.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_2101.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_2201.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_2301.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_2401.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_2501.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_2601.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_2701.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_2801.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_2901.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_3001.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_301.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_3101.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_3201.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_3301.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_3401.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_3501.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_3601.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_3701.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_3801.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_3901.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_4001.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_401.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_4101.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_501.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_601.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_701.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_801.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_yin_901.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chess_yin_yang.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="2151" lean-forward="true" selection-start-line="2151" selection-end-line="2151" />
+            <state relative-caret-position="541">
+              <caret line="2151" selection-start-line="2151" selection-end-line="2151" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -174,10 +90,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="371" />
-    <option name="y" value="-13" />
-    <option name="width" value="1932" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="width" value="1815" />
     <option name="height" value="993" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -186,6 +101,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,7 +113,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -326,10 +241,18 @@
       <option name="presentableId" value="Default" />
       <updated>1575565733755</updated>
     </task>
+    <task id="LOCAL-00001" summary="Some refactoring">
+      <created>1581757301635</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581757301636</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
@@ -342,7 +265,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.39869988" />
@@ -443,8 +366,8 @@
     <entry file="file://$PROJECT_DIR$/chesstest2.py" />
     <entry file="file://$PROJECT_DIR$/chess_yin_yang.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="2151" lean-forward="true" selection-start-line="2151" selection-end-line="2151" />
+        <state relative-caret-position="541">
+          <caret line="2151" selection-start-line="2151" selection-end-line="2151" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
