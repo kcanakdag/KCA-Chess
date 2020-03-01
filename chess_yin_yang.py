@@ -92,50 +92,50 @@ class DQNAgent:
         activation_softmax = tf.keras.layers.Softmax()
         model = tf.keras.models.Sequential()
 
-        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same',
+        model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=(3, 3), padding='same',
                                          input_shape=(8, 8, 1)))
         model.add(tf.keras.layers.Dropout(0.15))
         model.add(tf.keras.layers.BatchNormalization())
         model.add(activation_leakyRelu)
 
 
-        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same'))
+        model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=(3, 3), padding='same'))
         model.add(tf.keras.layers.Dropout(0.15))
         model.add(tf.keras.layers.BatchNormalization())
         model.add(activation_leakyRelu)
 
         model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2), strides=1, padding='valid'))
 
-        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same'))
+        model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=(3, 3), padding='same'))
         model.add(tf.keras.layers.Dropout(0.15))
         model.add(tf.keras.layers.BatchNormalization())
         model.add(activation_leakyRelu)
 
-        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same'))
-        model.add(tf.keras.layers.Dropout(0.15))
-        model.add(tf.keras.layers.BatchNormalization())
-        model.add(activation_leakyRelu)
-
-        model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2), strides=1, padding='valid'))
-
-        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same'))
-        model.add(tf.keras.layers.Dropout(0.15))
-        model.add(tf.keras.layers.BatchNormalization())
-        model.add(activation_leakyRelu)
-
-        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same'))
+        model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=(3, 3), padding='same'))
         model.add(tf.keras.layers.Dropout(0.15))
         model.add(tf.keras.layers.BatchNormalization())
         model.add(activation_leakyRelu)
 
         model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2), strides=1, padding='valid'))
 
-        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same'))
+        model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=(3, 3), padding='same'))
         model.add(tf.keras.layers.Dropout(0.15))
         model.add(tf.keras.layers.BatchNormalization())
         model.add(activation_leakyRelu)
 
-        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same'))
+        model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=(3, 3), padding='same'))
+        model.add(tf.keras.layers.Dropout(0.15))
+        model.add(tf.keras.layers.BatchNormalization())
+        model.add(activation_leakyRelu)
+
+        model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2), strides=1, padding='valid'))
+
+        model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=(3, 3), padding='same'))
+        model.add(tf.keras.layers.Dropout(0.15))
+        model.add(tf.keras.layers.BatchNormalization())
+        model.add(activation_leakyRelu)
+
+        model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=(3, 3), padding='same'))
         model.add(tf.keras.layers.Dropout(0.15))
         model.add(tf.keras.layers.BatchNormalization())
         model.add(activation_leakyRelu)
@@ -143,7 +143,7 @@ class DQNAgent:
         model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2), strides=1, padding='valid'))
 
         model.add(tf.keras.layers.Flatten())
-        model.add(tf.keras.layers.Dense(256))
+        model.add(tf.keras.layers.Dense(128))
         model.add(tf.keras.layers.Dropout(0.15))
         model.add(tf.keras.layers.BatchNormalization())
         model.add(activation_leakyRelu)
