@@ -6,34 +6,53 @@ import tensorflow as tf
 from collections import deque
 import numpy as np
 import random
+from datetime import datetime
 
+
+
+# physical_devices = tf.config.experimental.list_physical_devices('GPU')
+# tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
 class DQNAgent:
     def __init__(self):
-        self.memory = deque(maxlen=300)
-        self.gamma = 0.999
+        self.memory = deque(maxlen=100)
+        self.gamma = 0.8
         self.epsilon = 0.9999
-        self.epsilon_decay = 0.9995
-        self.epsilon_min = 0.15
-        self.batch_size = 64
+        self.epsilon_decay = 0.999
+        self.epsilon_min = 0.20
+        self.batch_size = 500
 
-        self.learning_rate =0.005
+        self.learning_rate =0.0000000001
 
         self.model = self.build_model()
+
 
 
     def evaulate(self, list_of_states, whos_turn):
         value_list = []
         random = np.random.rand()
+        can_finish = False
+        list_index = 0
+        finish_index = 99
         for state in list_of_states:
+            if 6 not in state:
+                finish_state = state
+                finish_index = list_index
+                can_finish = True
+            elif -6 not in state:
+                finish_state = state
+                finish_index = list_index
+                can_finish = True
+
             state = np.asarray(state)
-            state = state / 6
+            # state = state / 6
             state = state.reshape(8,8,1)
 
             state = np.array([state])
 
             value_state =self.model.predict(state)
             value_list.append(value_state)
+            list_index += 1
 
         value_array = np.asarray(value_list)
 
@@ -49,6 +68,16 @@ class DQNAgent:
             preferred_index = np.random.randint(0,len(value_array))
             preferred_state = list_of_states[preferred_index]
 
+        if preferred_index == finish_index:
+            print('corect')
+
+        if can_finish:
+            loss_value = abs(abs(value_list[preferred_index]) - abs(value_list[finish_index]))
+            print("loss is = " + str(loss_value))
+            preferred_state = finish_state
+            preferred_index = finish_index
+
+
 
 
 
@@ -56,44 +85,75 @@ class DQNAgent:
         return value_list, preferred_state, preferred_index
 
     def build_model(self):
-        activation_leakyRelu = tf.keras.layers.LeakyReLU(alpha=0.3)
+
+
+
+        activation_leakyRelu = tf.keras.layers.LeakyReLU(alpha=0.5)
         activation_softmax = tf.keras.layers.Softmax()
         model = tf.keras.models.Sequential()
 
-        model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=(5, 5), padding='Same',
+        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same',
                                          input_shape=(8, 8, 1)))
-        model.add(tf.keras.layers.Dropout(0.3))
-        model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=(5, 5), padding='same'))
-        model.add(tf.keras.layers.Dropout(0.3))
-        model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2)))
-
-        model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=(5, 5), padding='Same',
-                                         ))
-        model.add(tf.keras.layers.Dropout(0.3))
-        model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=(5,5), padding='same'))
-        model.add(tf.keras.layers.Dropout(0.3))
-        model.add(tf.keras.layers.MaxPool2D(pool_size=(2,2)))
+        model.add(tf.keras.layers.Dropout(0.15))
         model.add(tf.keras.layers.BatchNormalization())
-
-
-        model.add(tf.keras.layers.Flatten())
-        model.add(tf.keras.layers.Dense(128, activation='sigmoid'))
-        model.add(tf.keras.layers.Dropout(0.3))
-        model.add(tf.keras.layers.Dense(128, activation='sigmoid'))
-        model.add(tf.keras.layers.Dropout(0.3))
-        model.add(tf.keras.layers.Dense(128, activation='sigmoid'))
-        model.add(tf.keras.layers.Dropout(0.3))
-        model.add(tf.keras.layers.Dense(128, activation='sigmoid'))
-
-        model.add(tf.keras.layers.Dropout(0.3))
-        model.add(tf.keras.layers.Dense(1))
         model.add(activation_leakyRelu)
 
 
+        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same'))
+        model.add(tf.keras.layers.Dropout(0.15))
+        model.add(tf.keras.layers.BatchNormalization())
+        model.add(activation_leakyRelu)
+
+        model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2), strides=1, padding='valid'))
+
+        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same'))
+        model.add(tf.keras.layers.Dropout(0.15))
+        model.add(tf.keras.layers.BatchNormalization())
+        model.add(activation_leakyRelu)
+
+        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same'))
+        model.add(tf.keras.layers.Dropout(0.15))
+        model.add(tf.keras.layers.BatchNormalization())
+        model.add(activation_leakyRelu)
+
+        model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2), strides=1, padding='valid'))
+
+        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same'))
+        model.add(tf.keras.layers.Dropout(0.15))
+        model.add(tf.keras.layers.BatchNormalization())
+        model.add(activation_leakyRelu)
+
+        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same'))
+        model.add(tf.keras.layers.Dropout(0.15))
+        model.add(tf.keras.layers.BatchNormalization())
+        model.add(activation_leakyRelu)
+
+        model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2), strides=1, padding='valid'))
+
+        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same'))
+        model.add(tf.keras.layers.Dropout(0.15))
+        model.add(tf.keras.layers.BatchNormalization())
+        model.add(activation_leakyRelu)
+
+        model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), padding='same'))
+        model.add(tf.keras.layers.Dropout(0.15))
+        model.add(tf.keras.layers.BatchNormalization())
+        model.add(activation_leakyRelu)
+
+        model.add(tf.keras.layers.MaxPool2D(pool_size=(2, 2), strides=1, padding='valid'))
+
+        model.add(tf.keras.layers.Flatten())
+        model.add(tf.keras.layers.Dense(256))
+        model.add(tf.keras.layers.Dropout(0.15))
+        model.add(tf.keras.layers.BatchNormalization())
+        model.add(activation_leakyRelu)
+        model.add(tf.keras.layers.Dense(1))
 
 
 
-        model.compile(loss='mse', optimizer=tf.keras.optimizers.RMSprop(lr=self.learning_rate, rho=0.9, epsilon=None, decay = 0.0))
+
+
+        model.compile(loss='mse', optimizer=tf.keras.optimizers.Adam(lr=self.learning_rate))
 
 
         return model
@@ -102,6 +162,10 @@ class DQNAgent:
         self.memory.append((state, reward, next_state, done))
 
     def replay(self, batch_size):
+
+        # logdir = "logs/" + modelName
+        # tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=logdir)
+
         minibatch = random.sample(self.memory, batch_size)
         sure_reward = self.memory[-1]
         minibatch.append(sure_reward)
@@ -133,7 +197,7 @@ class DQNAgent:
 
             if not done:
                 target = (reward + self.gamma * self.model.predict(next_state))
-            self.model.fit(state, [target], epochs=5, verbose=0)
+            self.model.fit(state, [target], epochs=1, verbose=0)
             # Decrease epsilon
             if self.epsilon > self.epsilon_min:
                 self.epsilon *= self.epsilon_decay
@@ -249,6 +313,11 @@ class GameEnv:
     def get_state(self):
         board = copy(self.boardDict)
         return board
+    #
+    # @staticmethod
+    # def state_to_binstate(state):
+    #
+
 
 
     def board_to_position(self, board_dict):
@@ -2056,7 +2125,7 @@ yang = DQNAgent()
 moves = 0
 W_win = 0
 B_win = 0
-agentGeneration = 0
+agentGeneration = 1
 
 
 def StartGame():
@@ -2075,78 +2144,83 @@ def StartGame():
         whos_turn = myGame.whosTurn
         states = myGame.get_output()
         list_of_states = reformat_dict(states)
-        try:
-            if whos_turn == 'W':
-                value_list, preferredState, index = yin.evaulate(list_of_states, whos_turn)
-                states_list = list(states)
-                state_key_move_selected = states_list[index]
-                state = states[state_key_move_selected]
-                # print(value_list)
 
-            elif whos_turn == 'B':
-                value_list, preferredState, index = yang.evaulate(list_of_states, whos_turn)
-                states_list = list(states)
-                state_key_move_selected = states_list[index]
-                state = states[state_key_move_selected]
-        except:
-            pass
+        if whos_turn == 'W':
+           value_list, preferredState, index = yin.evaulate(list_of_states, whos_turn)
+          # print(preferredState)
+           states_list = list(states)
+           state_key_move_selected = states_list[index]
+           state = states[state_key_move_selected]
+
+        elif whos_turn == 'B':
+           value_list, preferredState, index = yang.evaulate(list_of_states, whos_turn)
+           states_list = list(states)
+           state_key_move_selected = states_list[index]
+           state = states[state_key_move_selected]
+           print(value_list)
+
 
         # print(state_key_move_selected)
         myGame.board_to_position(state)
 
         moves += 1
-        if moves >= 300:
+        if moves >= 120:
             quitGame = True
             done = True
         myGame.getWindow()
         next_state = myGame.getBoardDict()
 
         if len(myGame.WkingPositions) == 0:
-            reward_yin = -1
-            reward_yang = 1
+            reward_yin = -100
+            reward_yang = 100
             quitGame = True
             done = True
             B_win += 1
         elif len(myGame.BkingPositions) == 0:
-            reward_yin = 1
-            reward_yang = -1
+            reward_yin = 100
+            reward_yang = -100
             quitGame = True
             done = True
             W_win += 1
-
 
         yin.remember(state,reward_yin,next_state, done)
         yang.remember(state,reward_yang,next_state, done)
 
         myGame.TurnOver()
 
-        clock.tick(60)
+        # clock.tick(60)
     # print(reward)
 
-    if len(yin.memory) >= yin.batch_size:
+    if done:
         agentGeneration += 1
         print("Generation: {}".format(agentGeneration))
-
+        yin.batch_size = moves
+        yang.batch_size = moves
         yin.replay(yin.batch_size)
         yang.replay(yang.batch_size)
+        yin.memory = deque(maxlen=120)
+        yang.memory = deque(maxlen=120)
+        #
+        # yin.model.save_weights(r'saved/model_yin_{}.h5'.format(agentGeneration))
+        # yang.model.save_weights(r'saved/model_yang_{}.h5'.format(agentGeneration))
 
 total_games = 0
 
+#
+# yin.epsilon = 0.20
+# yang.epsilon =0.20
+#
+# yin.model.load_weights(r'saved/model_yin_22801.h5')
+# yang.model.load_weights(r'saved/model_yang_22801.h5')
 
-yin.epsilon = 0.2
-yang.epsilon =0.2
-
-yin.model.load_weights(r'saved/model_yin_1501.h5')
-yang.model.load_weights(r'saved/model_yang_1501.h5')
-
-NUM_OF_GAMES_PLAYED = 1000000
+NUM_OF_GAMES_PLAYED = 10000000
 for i in range(NUM_OF_GAMES_PLAYED):
     StartGame()
     total_games += 1
     print('episode: {}/{}, e:{:.2}, moves : {}, W_win %{} , B_win %{}'.format(i+1, NUM_OF_GAMES_PLAYED, yin.epsilon, moves,
                                                                               (W_win/(total_games))*100, (B_win/(total_games))*100))
     if i%100 == 0:
-        yin.model.save_weights(r'saved/model_yin_{}.h5'.format(total_games))
-        yang.model.save_weights(r'saved/model_yang_{}.h5'.format(total_games))
+        yin.model.save_weights(r'saved/model_yin_{}.h5'.format(agentGeneration))
+        yang.model.save_weights(r'saved/model_yang_{}.h5'.format(agentGeneration))
 
 
